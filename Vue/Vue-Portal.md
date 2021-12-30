@@ -48,6 +48,7 @@ export default {
 ```
 
 ```html
+// 
 <template>
   <div>
     <h2>Child Component</h2>
