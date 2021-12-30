@@ -14,7 +14,9 @@ SELECT select_list [ INTO new_table ]
 ```
 
 ### 예시
-> _`datas`는 임의로 설정한 테이블이고, `id`, `password`는 `datas`의 칼럼임_
+> _`datas`는 임의로 설정한 테이블이고, `id`, `password`, `money`는 `datas`의 칼럼임_
+
+- SELECT FROM
 
 ```SQL
 SELECT * FROM datas
@@ -33,6 +35,8 @@ SELECT id, password FROM datas
 ```
 `datas`의 모든 데이터의 `id`, `password`를 꺼냄. (여러개를 꺼낼 때 사용)
 
+- WHERE
+
 ```SQL
 SELECT password FROM datas WHERE id = 5
 ```
@@ -49,11 +53,12 @@ SELECT * INTO newDatas FROM datas WHERE id = 1
 > OR: [조건1] `OR` [조건2]  
 > NOT: `NOT(`[조건1]`)`
 
+- ORDER BY
 
 ```SQL
 SELECT * FROM datas ORDER BY id [ASC | DESC]
 ```
-`datas`의 데이터중 `id`를 기준으로 하여 오름차순/내림차순으로 정렬한 후 가져옴.
+`datas`의 데이터를 `id`를 기준으로 하여 오름차순/내림차순으로 정렬한 후 가져옴.
 > ASC: 오름차순  
 > DESC: 내림차순
 
@@ -62,7 +67,53 @@ SELECT * FROM datas ORDER BY id [ASC | DESC]
 ```SQL
 SELECT * FROM datas ORDER BY id ASC, password DESC
 ```
-`datas`의 데이터 중 `id`를 기준으로 오름차순으로 정렬하고, `id`가 같을 시 `password`를 기준으로 내림차순 정렬.
+`datas`의 데이터를 `id`를 기준으로 오름차순으로 정렬하고, `id`가 같을 시 `password`를 기준으로 내림차순 정렬.
+
+```SQL
+SELECT * FROM datas ORDER BY id ASC LIMIT 3
+```
+`datas`의 데이터를 `id`를 기준으로 오름차순으로 정렬 후, 상단의 3개의 데이터만 가져옴.
+
+```SQL
+SELECT * FROM datas ORDER BY id ASC LIMIT 5,8
+```
+`datas`의 데이터를 `id`를 기준으로 오름차순으로 정렬 후, 5번쨰~8번쨰 데이터만 가져옴.
+
+> `LIMIT 3`과 `LIMIT 0,3`은 같다.
+
+- COUNT, SUM
+```SQL
+SELECT COUNT(*) FROM datas
+```
+`datas`의 컬럼 개수를 가져옴.
+
+```SQL
+SELECT COUNT(id) COUNT(password) FROM datas
+```
+`datas`의 `id`와 `password` 개수를 가져옴.
+
+> `NULL`인 자료는 카운트하지 않음.
+
+```SQL
+SELECT COUNT(DISTINCT id) FROM datas
+```
+`datas`의 `id` 개수를 중복을 제외하고 가져옴.
+
+```SQL
+SELECT SUM(money) FROM datas
+```
+`datas`의 모든 데이터의 `money`함수를 합하여 가져옴.
+
+- GROUP BY
+```SQL
+SELECT id, SUM(money) FROM datas GROUP BY id
+```
+`datas`중 같은 id인 데이터들을 그룹화하여 그 그룹내의 `money`합을 가져온다.
+
+```SQL
+SELECT id, SUM(money) FROM datas GROUP BY id HAVING SUM(money) >= 10000
+```
+`datas`중 같은 id인 데이터들을 그룹화하여 그 그룹내의 `money` 합중 10000 이상인 데이터만 가져온다.
 
 ## 1.2. INSERT INTO
 ### 기본 구조
@@ -102,11 +153,3 @@ ALTER TABLE datas ADD phone VARCHAR(10) NOT NULL
 ALTER TABLE datas ALTER COLUMN phone VARCHAR(50) NULL
 ```
 `datas`의 `phone`이라는 칼럼을 `VARCHAR(50)`, `NULL` 속성으로 변경함.
-
-
-
-# 2. 참고 문헌
-- [Wikipedia](https://ko.wikipedia.org/wiki/SQL)
-- [[SQL] SELECT 문 간단하게 파헤치기 . FROM, WHERE, GROUP BY, ORDER BY, JOIN](https://121202.tistory.com/26)
-- [[MSSQL] INSERT INTO 문.테이블에 데이터 추가하기](https://121202.tistory.com/25)
-- [[SQL] ALTER TABLE 문. 테이블 수정하기](https://121202.tistory.com/27?category=541709)
