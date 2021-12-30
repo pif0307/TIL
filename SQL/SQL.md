@@ -57,6 +57,13 @@ SELECT * FROM datas ORDER BY id [ASC | DESC]
 > ASC: 오름차순  
 > DESC: 내림차순
 
+같은 조건일 경우에 그 뒤의 순서를 2순위로 정할 수 있음.
+
+```SQL
+SELECT * FROM datas ORDER BY id ASC, password DESC
+```
+`datas`의 데이터 중 `id`를 기준으로 오름차순으로 정렬하고, `id`가 같을 시 `password`를 기준으로 내림차순 정렬.
+
 ## 1.2. INSERT INTO
 ### 기본 구조
 ```SQL
