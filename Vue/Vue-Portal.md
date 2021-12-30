@@ -48,7 +48,7 @@ export default {
 ```
 
 ```html
-// 
+// ChildComponent.vue
 <template>
   <div>
     <h2>Child Component</h2>
