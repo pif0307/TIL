@@ -8,7 +8,7 @@
 # 1. 문법
 
 ## 1.1. 글머리 Header
-글머리(Header)는 `#`을 앞에 붙여 최대 `6`개까지 작성할 수 있다.
+글머리(Header)는 `#`을 앞에 붙여 최대 6개까지 작성할 수 있다.
 
 ```
 # 1
@@ -181,8 +181,8 @@ int main() {
 또는 문장 끝에서 띄어쓰기를   
 3번 이상 하면 된다.
 
-# 2.1. 기타
+# 2. 기타
 
-## 참고 문헌
+## 2.1. 참고 문헌
  - [ihoneymon/how-to-write-by-markdown.md](https://gist.github.com/ihoneymon/652be052a0727ad59601#file-how-to-write-by-markdown-md)
  - [MarkDown 사용법 총정리](https://heropy.blog/2017/09/30/markdown/)
