@@ -181,8 +181,8 @@ int main() {
 또는 문장 끝에서 띄어쓰기를   
 3번 이상 하면 된다.
 
-# 2.1. 기타
+# 2. 기타
 
-## 참고 문헌
+## 2.1. 참고 문헌
  - [ihoneymon/how-to-write-by-markdown.md](https://gist.github.com/ihoneymon/652be052a0727ad59601#file-how-to-write-by-markdown-md)
  - [MarkDown 사용법 총정리](https://heropy.blog/2017/09/30/markdown/)
