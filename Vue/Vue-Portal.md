@@ -59,7 +59,7 @@ export default {
 <template>
 ```
 ### 실행 결과
-![실행결과](./assets/Vue.use-not-working-img1.png)
+![실행결과](./assets/Vue.use-not-working-img1.PNG)
 
 ## 3. 참고 문헌
 - [Getting Started with Portal-Vue](https://portal-vue.linusb.org/guide/getting-started.html)
