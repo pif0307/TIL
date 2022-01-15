@@ -9,6 +9,7 @@
 ## Javascript
 - [Object 관련 함수](./Javascript/Object-methods.md)
 - [Template Literal ( ${변수} )](./Javascript/Template-Literal.md)
+- [변수의 타입을 숫자타입으로 바꾸는 법(+ 연산자)](./Javascript/Convert-to-number-type.md)
 
 ## Node.js
 - [Express.js에서 파일과 데이터를 동시에 불러오는 방법](./Nodejs/Expressjs-post-file-and-datas.md)
