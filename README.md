@@ -4,6 +4,10 @@
 
 - [마크다운 MarkDown](./Markdown/Markdown.md)
 
+## 알고리즘
+
+- [정렬 알고리즘](./Algorithm/sort.md)
+
 ## 데이터베이스
 
 - [SQL 기본](./SQL/SQL.md)
