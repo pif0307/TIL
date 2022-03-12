@@ -48,3 +48,37 @@ def bubble_sort(list):
 
     return l
 ```
+
+## Merge Sort
+
+리스트를 1개가 될 떄 까지 반으로 자른 후, 리스트를 2개 씩 정렬해 감.
+
+시간 복잡도: `O(nlogn)`
+
+### 파이썬 구현
+
+```python
+def merge_sort(list):
+    if(len(list) <= 1):
+        return list
+
+    mid = len(list) // 2
+    list_one = merge_sort(list[:mid])
+    list_two = merge_sort(list[mid:])
+
+    i = j = 0
+    merged_list = []
+    while i < len(list_one) and j < len(list_two):
+        if list_one[i] <= list_two[j]:
+            merged_list.append(list_one[i])
+            i += 1
+
+        else:
+            merged_list.append(list_two[j])
+            j += 1
+
+    merged_list += list_one[i:]
+    merged_list += list_two[j:]
+
+    return merged_list
+```
