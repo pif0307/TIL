@@ -82,3 +82,25 @@ def merge_sort(list):
 
     return merged_list
 ```
+
+## Counting sort
+
+수의 범위가 작을 시에 유리, 모든 리스트 값의 수를 세서 재배치 하여 정렬한다.
+
+### 파이썬 구현
+
+```python
+# 수 범위
+NUMBER_RANGE = 10000
+def counting_sort(p_list):
+    counts = [0] * NUMBER_RANGE
+
+    for i in p_list:
+        counts[i - 1] += 1
+
+    output_list = []
+    for index, value in enumerate(counts):
+        output_list += [index + 1] * value
+
+    return output_list
+```
